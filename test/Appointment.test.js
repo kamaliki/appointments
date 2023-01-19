@@ -6,15 +6,19 @@ import { act } from "react-dom/test-utils";
 import Appointment from "../src/Appointment";
 
 describe ("Appointment", () => {
-    it("renders the customer first name", () => {
-        const customer = {firstName: "Ash"};
-        
-        const component = <Appointment customer={customer} />;
-        const container = document.createElement("div");
-        document.body.appendChild(container);
-        act (() => {
-            ReactDOM.createRoot(container).render(component);
-        });
-        expect(document.body.textContent).toMatch("Ash");
+    let container;
+    let customer;
+
+    beforeEach(() => {
+        container = document.createElement("div");
     });
+
+    const render = (component) => act(() => ReactDOM.createRoot(container).render(component));
+    
+    it("renders the customer first name", () => {
+        customer = { firstName: "Ash" };
+        render(<Appointment customer={customer} />);
+        expect(container.textContent).toMatch("Ash");
+    });
+    
 });
