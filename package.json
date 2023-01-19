@@ -1,0 +1,20 @@
+{
+  "name": "appointments",
+  "version": "1.0.0",
+  "description": "A test driven approach to react applications using jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "TDD",
+    "React",
+    "Jest",
+    "Webpack"
+  ],
+  "author": "Clive Kamaliki",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
